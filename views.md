@@ -52,23 +52,28 @@ File `app/views/carts/show.html.erb`:
 
 We can write this:
 
+```ruby
 <%= render @cart.line_items %>
+```
 
 Also create partial `app/views/line_items/_line_item.html.erb`:
 
+```ruby
 <tr>
   <td><%= line_item.quantity %></td>
 </tr>
+```
 
-Note: the partial is named line_item, so inside the partial we expect to have a variable called `line_item`.
+*Note*: the partial is named line_item, so inside the partial we expect to have a variable called `line_item`.
 
 
 ## button_to
 
 This helper allows us to create delete button for destroy action:
 
+```ruby
 <%= button_to 'X', @item, method: :delete, data: {confirm: 'Are you sure?'} %>
-
+```
 
 ## Render javascript
 
@@ -89,7 +94,7 @@ end
 
 In view `app/views/line_items/destroy.js.erb`:
 
-```
+```javascript
 $('#cart').html('<%= j render @line_items %>')
 ```
 
