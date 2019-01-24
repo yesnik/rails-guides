@@ -13,6 +13,6 @@ class Partner < ApplicationRecord
   validates :balance, numericality: true
   validates :clients_found, numericality: { only_integer: true }
   
-  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
+  validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
 end
 ```
