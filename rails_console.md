@@ -22,6 +22,10 @@ rails new depot -T --skip-coffee  // skip tests, coffescript
 rails new todos-api --api -T // api app, skip tests
 ```
 
+## rails db:create
+
+This command creates databases for *development* and *test*. It uses `config/database.yml`.
+
 ## rails db:seed
 
 Apply seeds to database.
