@@ -60,14 +60,14 @@ rails runner scripts/generate_orders.rb
 
 ## rails db:migrate
 
-Migration commands:
+This command applies or reverts migration files located at `db/migrate`:
 
 ```
-rails db:migrate
+rails db:migrate  # Apply pending migrations
 rails db:migrate VERSION=201804201030305020  # It will apply/rollback migrations to rewind DB to specified state.
 rails db:migrate redo  # It will roll back one migration and rerun it.
 rails db:migrate redo STEP=2  # It will roll back 2 last migrations and rerun them.
-rails db:rollback
+rails db:rollback  # Rollback latest migration
 
 rails g migration remove_pay_type_from_orders pay_type:integer
 rails g migration add_pay_type_to_orders pay_type:references
