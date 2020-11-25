@@ -59,6 +59,14 @@ rails g task db_schema_migrations
 rails runner scripts/generate_orders.rb
 ```
 
+## rails delete
+
+This command deletes previously generated files.
+
+```bash
+rails d controller Archive index
+```
+
 ## rails db:migrate
 
 This command applies or reverts migration files located at `db/migrate`:
