@@ -2,14 +2,14 @@
 ## GET params
 
 ```
-id=1						{id: '1'}
-user[name]=kenny 			{user: {name: 'kenny'}}
+id=1				{id: '1'}
+user[name]=kenny		{user: {name: 'kenny'}}
 user[address][city]=Moscow	{user: {address: {city: 'Moscow'}}}
 ```
 
 ## logger in controllers
 
-Every controller has a logger attribute. We can use it to record a message at the error logging level:
+Every controller has a `logger` attribute. We can use it to record a message at the error logging level:
 
 ```ruby
 class CartsController < ApplicationController
@@ -18,8 +18,8 @@ class CartsController < ApplicationController
   private
 
   def invalid_cart
-  	logger.error "Attempt to access invalid cart: #{params[:id]}"
-  	redirect_to store_index_url, notice: 'Invalid cart'
+    logger.error "Attempt to access invalid cart: #{params[:id]}"
+    redirect_to store_index_url, notice: 'Invalid cart'
   end
 end
 ```
@@ -37,7 +37,7 @@ redirect_to store_index_url, notice: 'Logged out'
 ```
 action_name #=> 'index'
 cookies
-headers  - hash of HTTP headrs that will be used in the response.
+headers - hash of HTTP headrs that will be used in the response.
 params  - a hash-like object containing request params: params[:id] or params['id']
 request - the incoming request object. Methods:
 	request.get? #=> true
@@ -87,7 +87,7 @@ Rails will by default look for a layout called store in the `app/views/layouts` 
 Layout `layouts/application.html.erb` will be applied to all controllers 
 that don't otherwise have a layout defined for them.
 
-We can qualify which actions will have the layout applied tho them using the :only and :except qualifiers:
+We can qualify which actions will have the layout applied to them using the `:only` and `:except` qualifiers:
 
 ```ruby
 class StoreController < ApplicationController
@@ -109,7 +109,7 @@ class StoreController < ApplicationController
     if Store.closed?
       'store_down'
     else
-	  'standard'
+      'standard'
     end
   end
 end
