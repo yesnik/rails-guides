@@ -1,6 +1,7 @@
 ## Callbacks
 
 Rails supports 3 types of callbacks: before, after, around.
+
 Such callbacks are called just prior or and/or just after the execution of actions.
 
 If before action callback returns false, then processing of the callback chain terminates,
