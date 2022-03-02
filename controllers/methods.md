@@ -7,6 +7,31 @@ user[name]=kenny		{user: {name: 'kenny'}}
 user[address][city]=Moscow	{user: {address: {city: 'Moscow'}}}
 ```
 
+## Strong Parameters
+
+This feature helps Rails to filter `params` passed to controller action.
+
+```ruby
+class ArticlesController < ApplicationController
+  # ...
+
+  def create
+    @article = Article.new(article_params)
+
+    if @article.save
+      redirect_to @article
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  private
+    def article_params
+      params.require(:article).permit(:title, :body)
+    end
+end
+```
+
 ## logger in controllers
 
 Every controller has a `logger` attribute. We can use it to record a message at the error logging level:
