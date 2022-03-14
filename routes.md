@@ -5,7 +5,13 @@ You can find routes via 2 ways:
 - Go to page: http://127.0.0.1:3000/rails/info/routes
 - In console: `rails routes`
 
-Routes are defined at `config/routes.rb`.
+Routes are defined at `config/routes.rb`:
+
+```ruby
+Rails.application.routes.draw do
+  get "/articles", to: "articles#index"
+end
+```
 
 ## resources
 
