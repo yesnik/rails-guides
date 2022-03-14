@@ -9,6 +9,9 @@ Routes are defined at `config/routes.rb`:
 
 ```ruby
 Rails.application.routes.draw do
+  # Way 1
+  get 'articles/index'
+  # Way 2
   get "/articles", to: "articles#index"
 end
 ```
