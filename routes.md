@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get "/articles", to: "articles#index"
 end
 ```
+This means that `GET /articles` requests are mapped to the `index` action of `ArticlesController`.
 
 ## resources
 
