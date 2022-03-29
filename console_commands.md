@@ -44,6 +44,7 @@ rails g model Item name done:boolean todo:references
 rails g Model Account balance:decimal{10-2}
 
 rails g controller Admin::Book action1 action2
+rails g controller Questions
 
 rails g scaffold User name password:digest
 
