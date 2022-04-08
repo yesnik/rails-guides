@@ -30,3 +30,15 @@ class CreateOrderHistories < ActiveRecord::Migration
   end
 end
 ```
+
+## Add foreign key to users table
+
+```ruby
+def change
+  add_reference :questions, :author, null: false, foreign_key: { to_table: :users }
+end
+```
+This migration will: 
+
+- create column `author_id BIGINT NOT NULL`
+- foreign key `"fk_rails_d96516e73c" FOREIGN KEY (author_id) REFERENCES users(id)`
