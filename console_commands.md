@@ -17,9 +17,9 @@ Show number of controllers, models, methods, etc.
 ## rails new
 
 ```bash
-rails new mysite -d postgresql # use PostgreSQL
+rails new mysite-api --api -d postgresql # api app, use PostgreSQL
 rails new mysite -d mysql # use MySQL
-rails new depot -T --skip-coffee # skip tests, coffescript
+rails new depot -T # skip tests
 rails new todos-api --api -T # api app, skip tests
 ```
 
